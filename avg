@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+
+    int scores[10][3];
+    int total[10] = { 0 };
+    float average[10];
+
+        // 입력 받기
+    for (int i = 0; i < 10; i++) {
+        printf("학생 %d의 국어, 영어, 수학 점수를 입력하세요: ", i + 1);
+        for (int j = 0; j < 3; j++) {
+              scanf_s("%d", &scores[i][j]);
+              total[i] += scores[i][j];
+         }
+        average[i] = (float)total[i] / 3;
+    }
+
+        // 결과 출력
+    printf("\n학생별 총점과 평균:\n");
+    for (int i = 0; i < 10; i++) {
+        printf("학생 %d: 총점=%d, 평균=%.2f\n",i+1,  total[i], average[i]);
+    }
+
+	return 0;
+}
